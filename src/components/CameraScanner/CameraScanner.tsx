@@ -65,7 +65,7 @@ export const CameraScanner = ({ setIsCameraShown, onReadCode }: ICameraScannerPr
   const handleZoomIn = () => {
     if (zoom < 1) {
       Animated.timing(zoomAnim, {
-        toValue: Math.min(zoom + 0.1, 16), // Increase zoom by 0.1 but not exceed 1
+        toValue: Math.min(zoom + 1, 10), // Increase zoom by 0.1 but not exceed 1
         duration: 200,
         useNativeDriver: false,
       }).start();
@@ -75,7 +75,7 @@ export const CameraScanner = ({ setIsCameraShown, onReadCode }: ICameraScannerPr
   const handleZoomOut = () => {
     if (zoom > 0) {
       Animated.timing(zoomAnim, {
-        toValue: Math.max(zoom - 0.1, 0), // Decrease zoom by 0.1 but not go below 0
+        toValue: Math.max(zoom - 1, 0), // Decrease zoom by 0.1 but not go below 0
         duration: 200,
         useNativeDriver: false,
       }).start();
